@@ -6,12 +6,12 @@ services:
     environment:
       KC_DB_URL: jdbc:postgresql://database:5432/liquid
       KC_DB: postgres
-      KC_DIR: /import/liquid
       KC_DB_USERNAME: liquid
       KC_HTTP_ENABLED: true
       KC_HTTP_PORT: 8087
       KC_DB_PASSWORD: admin
       KC_HOSTNAME: localhost
+      KEYCLOAK_IMPORT: /import
       KC_HEALTH_ENABLED: true
       KAFKA_TOPIC: liquid-keycloak-event
       DNS_CACHE_SIZE: 0
@@ -29,9 +29,9 @@ services:
       timeout: 5s
       retries: 5
       start_period: 300s
-    command: ["start-dev"]
+    command: ["start-dev", "--import-realm"]
     volumes:
-        - ./keycloak/import:/import
+        - ./keycloak/import/liquid:/opt/keycloak/data/import
         - ./keycloak/providers:/opt/keycloak/providers
     ports:
       - "9000:8087"
@@ -110,6 +110,9 @@ services:
       - KAFKA_CLUSTERS_0_NAME=kafkacluster
     ports:
      - "8086:8086"
+    depends_on:
+        kafka:
+            condition: service_healthy
 
 volumes:
   pgdata:
