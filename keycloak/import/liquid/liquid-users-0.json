@@ -1,0 +1,76 @@
+{
+  "realm" : "liquid",
+  "users" : [ {
+    "id" : "af82806b-c56e-4f4c-8431-22eb2ecbdb26",
+    "username" : "adminliquid",
+    "emailVerified" : false,
+    "createdTimestamp" : 1723854306661,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "f277e6c0-a1d9-473a-9852-3c6bdc332e83",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1723854341306,
+      "secretData" : "{\"value\":\"VdnYLMt4wY50e3tzk1Bjaf6r7bhsDrv1DpZEAthbQbo=\",\"salt\":\"XthCSqhnq3p/Ezo/QlnknA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "admin", "default-roles-quarkus", "confidential", "uma_authorization", "user", "offline_access" ],
+    "clientRoles" : {
+      "realm-management" : [ "manage-authorization", "impersonation", "manage-events", "query-groups", "query-users", "view-events", "query-realms", "query-clients", "view-identity-providers", "view-users", "create-client", "realm-admin", "view-authorization", "manage-realm", "manage-identity-providers", "view-realm", "view-clients", "manage-clients", "manage-users" ],
+      "broker" : [ "read-token" ],
+      "backend-service" : [ "uma_protection" ],
+      "account" : [ "view-groups", "manage-account", "manage-account-links", "view-profile", "view-consent", "delete-account", "view-applications", "manage-consent" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "49a60296-30aa-4cd0-bcc7-d44630eae5eb",
+    "username" : "alice",
+    "emailVerified" : false,
+    "attributes" : {
+      "nickname" : [ "alice" ],
+      "credit" : [ "0" ]
+    },
+    "createdTimestamp" : 1724721774172,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "39d5834f-a55f-44c3-826b-fc081d9dffca",
+      "type" : "password",
+      "createdDate" : 1724721774692,
+      "secretData" : "{\"value\":\"9rMuyYg3XzecExAOX7EzQ0mRa+er6Oa8sMX84+//hz8=\",\"salt\":\"ldI77IDRgfDCfx7JPvg0ZQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-quarkus" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "3178f285-5537-4b55-8ae3-5cd3101e9b9c",
+    "username" : "bob",
+    "emailVerified" : false,
+    "attributes" : {
+      "nickname" : [ "bob the builder" ],
+      "credit" : [ "47500" ]
+    },
+    "createdTimestamp" : 1724722437474,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "4f6c1e08-f6c4-4e3a-bd6d-55192ce8a1f7",
+      "type" : "password",
+      "createdDate" : 1724722437552,
+      "secretData" : "{\"value\":\"PIdbsY8jUephWWHF4DvCWBD+NOb62Qzzpp0aw/D1I2E=\",\"salt\":\"dSTyihlycWvucySN1JffEA==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-quarkus" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

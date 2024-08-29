@@ -1,0 +1,58 @@
+{#include main.html} {#title}Welcome{/title}
+<div class="index">
+  <div id="sidebar">
+    <div id="sidebarhead">
+      <div id="container_sb">
+        <div x-data id="title_sb">
+          <h2 x-text="$store.auth.nickname"></h2>
+          <h3 x-text="'Credit : ' + $store.auth.credit"></h3>
+        </div>
+      </div>
+    </div>
+    {#fragment id=rooms}
+    <ul x-data id="sidebar_content" x-init="$store.room.initRoom">
+    
+    </ul>
+    {/fragment}
+    <div id="sidebar_footer" x-data>
+      <template x-if="$store.auth.roles.includes('admin')">
+        <a href="http://localhost:9000/admin/liquid/console/">Admin Manage</a>
+      </template>
+      <a @click="$store.room.join" href="#">Join Room</a>
+      <a @click="$store.room.register" href="#">Register Room</a>
+      <a @click="$store.auth.accountManage" href="#">Manage Account</a>
+      <a @click="$store.auth.logout" href="#">Logout</a>
+    </div>
+  </div>
+  <div id="rightside">
+    {#if request.getPath().contains("/room/")} {#fragment id=chat}
+    <div hx-swap-oob="true" id="rightside" x-init="$store.room.initChat">
+      <div id="mainchat">
+        <div id="topchatbar">
+          <div id="tcbhead">
+            <h2></h2>
+          </div>
+          <a @click="$store.room.leave">Leave Room</a>
+        </div>
+        <ul id="textsection">
+          <div id="messages">
+            <h3></h3>
+            <span></span>
+          </div>
+        </ul>
+        <div id="textboxsection">
+          <div x-data="message" id="inputdiv">
+            <input
+              type="text"
+              @keyup.enter="sendMsg(textMsg)"
+              x-model="textMsg"
+              id="inputtext"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/fragment} {/if}
+  </div>
+</div>

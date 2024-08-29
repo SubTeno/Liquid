@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation 'io.quarkus:quarkus-container-image-docker'
+    implementation 'io.quarkus:quarkus-keycloak-admin-resteasy-client'
+    implementation 'io.quarkus:quarkus-rest-jackson'
+    implementation 'org.webjars.npm:htmx.org:2.0.1'
+    implementation 'io.quarkus:quarkus-messaging-kafka:3.13.2'
+    implementation 'org.webjars.npm:keycloak-js:25.0.2'
+    implementation 'org.webjars.npm:alpinejs:3.14.1'
+    implementation("org.webjars.npm:sweetalert2:11.12.4")
+    implementation "org.webjars.npm:tailwindcss:4.0.0-alpha.15"
+    implementation 'org.webjars.npm:matrix-org__olm:3.2.15'
+    implementation 'io.quarkus:quarkus-mongodb-panache:3.13.2'
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkiverse.renarde:quarkus-renarde:3.0.18'
+    implementation 'io.quarkus:quarkus-oidc'
+    // implementation 'io.quarkus:quarkus-jdbc-postgresql'
+    // implementation 'io.quarkus:quarkus-hibernate-orm-panache'
+    implementation 'io.quarkiverse.web-bundler:quarkus-web-bundler:1.7.0'
+    implementation 'io.quarkus:quarkus-websockets-next'
+    implementation 'io.quarkus:quarkus-redis-client'
+
+}
+
+group 'liquid'
+version '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}

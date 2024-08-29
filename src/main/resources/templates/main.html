@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- You can pass parameters from your templates to your main template and insert them -->
+    <title>{#insert title/}</title>
+    {#bundle /}
+  </head>
+  <body x-data>
+    {!
+    <div class="head" hx-boost="true">
+      <div><a href="{uri:WebResource.index}">Index</a></div>
+      <div><a href="{uri:WebResource.htmx}">HTMX</a></div>
+    </div>
+    !}
+    <!-- This inserts the body of your templates -->
+    <main x-show="$store.auth.authenticated">
+     {#insert /}
+    </main>
+  </body>
+    
+</html>
