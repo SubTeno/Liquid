@@ -4,7 +4,7 @@
 # Install
 1. Download the [Latest](https://github.com/SubTeno/Liquid/releases/download/1.0.0/liquid-1.0.0-runner.exe) github release binary runner native executable
 2. Aswell as clone the repo into your device
-2. Initialize micro-services from docker compose inside the repo you just cloned:
+2. Initialize micro-services by running CMD/Powershell and, inside repo directory, type:
 `
 docker-compose up -d
 `
