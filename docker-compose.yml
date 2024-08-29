@@ -1,21 +1,5 @@
 version: ""
 services:
-
-  liquid:
-    image: 8x7cdkcs/liquid:latest
-    environment:
-        - QUARKUS_OIDC_AUTH_SERVER_URL=http://keycloak:8087/realms/liquid
-        - QUARKUS_MONGODB_CONNECTION_STRING=mongodb://mongo:27017/liquid
-        - QUARKUS_KEYCLOAK_ADMIN_CLIENT_SERVER_URL=http://keycloak:8087
-        - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
-        - QUARKUS_REDIS_HOSTS=redis://redis:6379
-        - QUARKUS_MONGODB_HOSTS=mongo:27017
-        - QUARKUS_HTTP_PORT=8084
-    ports:
-      - "8080:8084"
-    depends_on:
-     kafka:
-        condition: service_healthy
      
   keycloak:
     image: quay.io/keycloak/keycloak:25.0.2
@@ -62,7 +46,6 @@ services:
     image: mongo:7.0.13-rc0-jammy
     environment:
        MONGO_INITDB_DATABASE: liquid
-       DNS_CACHE_SIZE: 0
     ports:
        - "7432:27017"
     volumes:
@@ -96,7 +79,7 @@ services:
       - "9092:9092"
       - "9094:9094"
     volumes:
-      - "kafka_data:/bitnami"
+      - ./kafka/data:/bitnami/kafka
     healthcheck:
        test: "kafka-topics.sh --list --bootstrap-server localhost:9092 || exit 1"
        interval: 1s
@@ -117,8 +100,16 @@ services:
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_AUTO_CREATE_TOPICS_ENABLE=true
-
-
+      
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    environment:
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9094
+      - SERVER_PORT=8086
+      - DYNAMIC_CONFIG_ENABLED=true
+      - KAFKA_CLUSTERS_0_NAME=kafkacluster
+    ports:
+     - "8086:8086"
 
 volumes:
   pgdata:
