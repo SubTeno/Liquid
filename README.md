@@ -46,3 +46,18 @@ docker-compose up -d
     *   Silent redirect for Keycloak SSO authentication checks.
 *   **ANY** `/q/*`
     *   Default Quarkus framework management and diagnostic endpoints.
+
+# System Analysis
+
+### Flow Chart
+<img width="452" height="932" alt="flow chart" src="https://github.com/user-attachments/assets/86137cc1-aaca-4a7a-8704-59741d1ff368" />
+
+### Entity Relationship Diagram
+<img width="811" height="871" alt="ER Diagram" src="https://github.com/user-attachments/assets/7ec1b8d4-0891-45e2-a6f0-9ef7454226a4" />
+
+### Data Flow Diagram
+<img width="1281" height="582" alt="data flow diagram" src="https://github.com/user-attachments/assets/c421b7ef-a914-41c9-9603-09ca034b3295" />
+
+### Database 
+<img width="1600" height="561" alt="database normalization" src="https://github.com/user-attachments/assets/db342643-b0bb-4ecc-8310-95dbf6618dd9" />
+
