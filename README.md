@@ -1,5 +1,6 @@
 # Prerequisite
 Download, and install docker desktop from their [Official Page](https://docs.docker.com/engine/install/). Optionally, you can use docker engine if u know what you're doing
+Read the [demo](https://github.com/SubTeno/Liquid/blob/main/Demo.pdf) for more information.
 
 # Install
 1. Download the [Latest](https://github.com/SubTeno/Liquid/releases/download/1.0.0/liquid-1.0.0-runner.exe) github release binary runner native executable
