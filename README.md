@@ -1,5 +1,5 @@
 # Prerequisite
-1. Download, and install docker desktop from their [Official Page](https://docs.docker.com/engine/install/). Optionally, you can use docker engine if u know what you're doing
+Download, and install docker desktop from their [Official Page](https://docs.docker.com/engine/install/). Optionally, you can use docker engine if u know what you're doing
 
 # Install
 1. Download the [Latest](https://github.com/SubTeno/Liquid/releases/download/1.0.0/liquid-1.0.0-runner.exe) github release binary runner native executable
@@ -34,6 +34,8 @@ docker-compose up -d
 *   **GET** `/api/v1/room/{roomid}`
     *   Retrieves all messages within the specified room.
 
+ 
+
 ### System & Static Endpoints
 
 *   **WS** `/room/{roomID}/ws`
@@ -58,6 +60,5 @@ docker-compose up -d
 ### Data Flow Diagram
 <img width="1281" height="582" alt="data flow diagram" src="https://github.com/user-attachments/assets/c421b7ef-a914-41c9-9603-09ca034b3295" />
 
-### Database 
+### Database Normalization
 <img width="1600" height="561" alt="database normalization" src="https://github.com/user-attachments/assets/db342643-b0bb-4ecc-8310-95dbf6618dd9" />
-
